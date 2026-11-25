@@ -1,0 +1,58 @@
+{
+  "name": "dsh-mycat",
+  "version": "1.0.0",
+  "description": "MYCAT — a session workbench for DeepSeek Harness: a pinned-session area with four session states, session management agent tools (new/seed/rename/stop/pin/unpin/archive/delete/restore/find), a recoverable trash, session stats and number-ordered workspaces.",
+  "type": "module",
+  "license": "MIT",
+  "author": "linseasea",
+  "homepage": "https://github.com/linseasea/dsh-mycat#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linseasea/dsh-mycat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/linseasea/dsh-mycat/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "session",
+    "sidebar",
+    "workspace",
+    "pinned",
+    "trash"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.3.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "docs",
+    "src",
+    "NOTICE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

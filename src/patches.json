@@ -1,0 +1,118 @@
+{
+  "sourceVersion": "0.2.2-rc.5",
+  "block": "src/mycat-block.js",
+  "blockAnchor": "function WorkspaceBrowser(",
+  "expectedSha256": "88ee7764395bc0b364beb067d8839363fe513443a3f449c84e1b56a8c737e89a",
+  "patches": [
+    {
+      "at": 197624,
+      "from": "\n//# sourceMappingURL=client.js.map",
+      "to": ""
+    },
+    {
+      "at": 197557,
+      "from": "",
+      "to": "function apply(ctx){try{return applyInner(ctx)}catch(e){try{fetch('/api/mycat/log',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({message:'apply failed: '+String(e&&e.stack||e)})})}catch(_){}throw e}}\n"
+    },
+    {
+      "at": 195565,
+      "from": "WorkspaceBrowser",
+      "to": "MycatRoot"
+    },
+    {
+      "at": 195178,
+      "from": "",
+      "to": ",priority:-100"
+    },
+    {
+      "at": 195091,
+      "from": "",
+      "to": "class MycatRoot extends react.Component{constructor(props){super(props);this.state={failed:false}}static getDerivedStateFromError(){return{failed:true}}componentDidCatch(error){try{fetch('/api/mycat/log',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({message:'sidebar render failed: '+String(error&&error.stack||error)})})}catch(_){}}render(){if(this.state.failed)return(0,react_jsx_runtime.jsx)('div',{className:'myc-empty',children:'工作区界面出错，已降级显示。刷新页面，或在设置里停用 MYCAT 可恢复。'});return(0,react_jsx_runtime.jsx)(WorkspaceBrowser,this.props)}}\n"
+    },
+    {
+      "at": 186546,
+      "from": "",
+      "to": "\n  try{const __mycatSess=ctx.get(`sessions`);MYCAT.bindSessionRefresh(()=>{try{__mycatSess.refresh?.()}catch(__mycatRefreshError){}})}catch(__mycatBindError){}\n  try{mycatSetLang(ctx.locale.getLocale().id);ctx.effect(()=>ctx.locale.subscribe(()=>{try{mycatSetLang(ctx.locale.getLocale().id)}catch(_){}}))}catch(_){}\n  try{ctx.slots.inject(`settings.section`,()=>{try{fetch('/api/mycat/log',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({message:'settings slot injected, registering now'})})}catch(_){}return ctx.slots.register({name:`settings.section`,id:`mycat`,order:50,label:`MYCAT`},MycatSettingsSafe)})}catch(__mycatSettingsError){try{fetch('/api/mycat/log',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({message:'settings section failed: '+String((__mycatSettingsError&&__mycatSettingsError.stack)||__mycatSettingsError).slice(0,1500)})})}catch(_){}}"
+    },
+    {
+      "at": 186535,
+      "from": "apply",
+      "to": "applyInner"
+    },
+    {
+      "at": 123129,
+      "from": "",
+      "to": "wide&&mycatSafe('pinned',(0,react_jsx_runtime.jsx)(MycatPinned,{list,pinnedSessionIds,archivedSessionIds,workspaces:storedWorkspaces,useSessionStatus,usePanelInfo,open:guardedOpen,onSessionRenameRequest:requestSessionRename,renderSlot,renderFactorySlot,useContextMenu,useContextMenuTarget,home,useSessionAccess,t}),null,()=>MYCAT.markPinnedFailed()),(0,react_jsx_runtime.jsx)('div',{className:'myc-divider'}),"
+    },
+    {
+      "at": 116362,
+      "from": "",
+      "to": ",wide,pinnedSessionIds"
+    },
+    {
+      "at": 116356,
+      "from": "",
+      "to": ";return wide?ids.filter(id=>!pinnedSessionIds.includes(id)):ids}"
+    },
+    {
+      "at": 116334,
+      "from": "",
+      "to": "{const ids="
+    },
+    {
+      "at": 107638,
+      "from": "",
+      "to": "})]"
+    },
+    {
+      "at": 105895,
+      "from": "",
+      "to": "(0,react_jsx_runtime.jsx)(MycatCollapse,{open:group.expanded,children:["
+    },
+    {
+      "at": 99335,
+      "from": "",
+      "to": ",mycatPinnedOn"
+    },
+    {
+      "at": 99264,
+      "from": "",
+      "to": ").map(g=>mycatPinnedOn&&g.sessions.some(n=>n.pinned)?{...g,sessions:g.sessions.filter(n=>!n.pinned)}:g"
+    },
+    {
+      "at": 99137,
+      "from": "",
+      "to": "mycatPinnedOn=useMycat(s=>!s.pinnedFailed);const "
+    },
+    {
+      "at": 82931,
+      "from": "",
+      "to": "&&mycatLead===void 0"
+    },
+    {
+      "at": 82558,
+      "from": "",
+      "to": "mycatTag?(0,react_jsx_runtime.jsx)(`span`,{className:`myc-wtag`,children:mycatTag}):null,row.completed?(0,react_jsx_runtime.jsxs)('span',{className:'myc-unread','aria-label':'已完成未读',title:'已完成，尚未查看',children:[(0,react_jsx_runtime.jsx)('i',{})]}):null,"
+    },
+    {
+      "at": 81910,
+      "from": "",
+      "to": "mycatLead!==void 0?mycatLead:"
+    },
+    {
+      "at": 79177,
+      "from": "",
+      "to": ",mycatLead,mycatTag"
+    },
+    {
+      "at": 35,
+      "from": "@deepseek-ai/dsh-client-ui-workspace",
+      "to": "dsh-mycat"
+    },
+    {
+      "at": 0,
+      "from": "\n",
+      "to": ""
+    }
+  ]
+}

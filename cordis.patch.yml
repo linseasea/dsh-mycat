@@ -1,0 +1,28 @@
+# MYCAT bundle patch.
+#
+# The client half (client.js) is a patched copy of the official
+# @deepseek-ai/dsh-client-ui-workspace (MIT, see NOTICE). It provides the
+# "uiWorkspace" service itself, so the official row below must stay disabled —
+# a client slot can only have one declaring entry.
+- insert:
+    - id: mycat
+      name: 'dsh-mycat'
+      config:
+        enabled: true
+        leading: 3
+        debounceMs: 300
+        # Ask the user to confirm the target workspace and the full first-turn
+        # prompt before session_new creates a Session (true = review gate on).
+        requireReview: true
+        # Notify when a pinned Session moves to "wait for me" (client reads prefs.notifyWait).
+        notifyWait: true
+        # Recoverable trash for session_delete: prune entries older than N days
+        # or beyond the total size cap. Runtime prefs ($DSH_HOME/mycat/prefs.json)
+        # override these defaults without reinstalling.
+        trashKeepDays: 30
+        trashMaxMB: 200
+
+# Keep the official workspace component disabled. If MYCAT is removed, this
+# line goes away with the bundle and the official sidebar returns.
+- id: ui-workspace
+  disabled: true

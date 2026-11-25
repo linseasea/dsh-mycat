@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "MYCAT",
+    "description": "Pinned-session area with four session states, session tools (new/rename/stop/pin/archive/delete/restore/find), a recoverable trash, session stats, and number-ordered workspaces.",
+    "detail": "docs/DETAIL.md"
+  }
+}
